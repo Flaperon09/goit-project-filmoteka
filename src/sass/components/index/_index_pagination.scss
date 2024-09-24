@@ -1,0 +1,101 @@
+// Стили оболочки пагинации
+.pagination-wrapper {
+    width: $mobile;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Стили контейнера пагинации
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 280px;
+    height: 40px;
+    margin: 0 auto 40px auto;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+// Стили списка пагинации UL
+.pagination-container ul {
+    display: flex;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+// Стили элементов списка LI
+.pagination-container ul li {
+    list-style: none;
+    line-height: 40px;
+    text-align: center;
+
+    border-radius: 5px;
+    transition: color 300ms ease, background-color 300ms ease;
+    cursor: pointer;
+}
+
+// Стили цифр пагинации в списке
+.pagination-container ul li.numb {
+    width: 32px;
+    height: 32px;
+    margin: 4px 4px 0 4px;
+    line-height: 32px;
+}
+
+// Стили точек пагинации в списке
+.pagination-container ul li.dots {
+    width: 40px;
+    height: 40px;
+    cursor: default;
+}
+
+// Стили кнопок влево и вправо
+.pagination-container ul li.btn {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 5px;
+    background-color: $color-btn-pagination;
+}
+
+// Стили активной цифры пагинации
+.pagination-container ul li.active {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    line-height: 40px;
+    color: $color-num-accent-pagination;
+    background-color: $color-accent-pagination;
+}
+
+// Стили ховера по цифрам пагинации
+.pagination-container ul li.numb:hover {
+    color: $color-num-accent-pagination;
+    background-color: $color-accent-pagination;
+}
+
+// Стили иконок пагинации
+.icon-arrow-left {
+    width: 48px;
+    height: 48px;
+}
+
+// === Для экранов от 768 и более пикселей
+@media screen and (min-width: $tablet) {
+    // Стили оболочки пагинации
+    .pagination-wrapper {
+        width: $tablet;
+    }
+    
+    // Стили контейнера пагинации
+    .pagination-container {
+        width: 440px;
+        margin: 0 auto 60px auto;
+    }
+}

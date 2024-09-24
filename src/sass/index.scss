@@ -1,2 +1,15 @@
-@import './common';
-@import './example';
+@import './utils/variables';
+@import './utils/global-styles';
+@import './utils/breakpoints';
+@import './utils/placeholders';
+@import './utils/common';
+
+@import './components/index/index_header';
+@import './components/index/index_main';
+@import './components/index/index_pagination';
+@import './components/index/index_footer';
+@import './components/modals/modal';
+
+@import './components/library/library_header';
+@import './components/library/library_mail';
+@import './components/library/library_footer';

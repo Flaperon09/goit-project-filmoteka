@@ -1,0 +1,22 @@
+
+/*
+Присоединяется к стилям через @extend
+
+.features {
+    @extend %list;
+}
+
+К стилю "features" добавляет параметры из стиля "%list".
+*/
+
+// Стиль для сброса настроек
+%list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+// =======================================================
+@import './variables';
+

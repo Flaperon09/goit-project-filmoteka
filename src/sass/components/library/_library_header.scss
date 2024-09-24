@@ -1,0 +1,119 @@
+// Стили контейнера хедера
+.container-library-header {
+    width: $mobile;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+
+    background-color: $bkg-color;
+    background-image: url(../images/background-library-overlay-mobile.png), url('../images/background-library-mobile.jpg');
+}
+
+// Медиазапрос для бекграунда
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .container-library-header {
+        background-size: $mobile;
+        background-image: url(../images/background-library-overlay-mobile@2x.png), url('../images/background-library-mobile@2x.jpg');
+    }
+}
+
+// Стили контейнера кнопок хедера
+.library-buttons {
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+// Стили кнопок хедера
+.library-button {
+    width: 130px;
+    height: 44px;
+    // Правый маржин у первой кнопки
+    &:nth-child(1) {
+        margin-right: 20px;
+    }
+
+    border: 1px solid $color-border-button;
+    border-radius: 5px;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    &.checked {
+        border: none;
+        background-color: $color-button;
+    }
+
+    line-height: 16px;
+    color: $color-text-header;
+}
+
+// === Для экранов от 768 до 1279 пикселей
+@media screen and (min-width: $tablet) {
+    // Стили контейнера хедера
+    .container-library-header {
+        width: $tablet;
+        height: 216px;
+    
+        background-image: url(../images/background-library-overlay-tablet.png), url('../images/background-library-tablet.jpg');
+    }
+    
+    // Медиазапрос для бекграунда
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .container-library-header {
+            background-size: $tablet;
+            background-image: url(../images/background-library-overlay-tablet@2x.png), url('../images/background-library-tablet@2x.jpg');
+        }
+    }
+
+    // Стили контейнера кнопок хедера
+    .library-buttons {
+        margin-top: 40px;
+    }
+    
+    // Стили кнопок хедера
+    .library-button {
+        width: 152px;
+    
+        // Правый маржин у первой кнопки
+        &:nth-child(1) {
+            margin-right: 32px;
+        }
+    }
+}
+
+// === Для экранов от 1280 и более пикселей
+@media screen and (min-width: $desktop) {
+    // Стили контейнера хедера
+    .container-library-header {
+        width: $desktop;
+        height: 216px;
+
+        background-image: url(../images/background-library-overlay-desktop.png), url('../images/background-library-desktop.jpg');
+    }
+    
+    // Медиазапрос для бекграунда
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .container-library-header {
+            background-size: $desktop;
+            background-image: url(../images/background-library-overlay-desktop@2x.png), url('../images/background-library-desktop@2x.jpg');
+        }
+    }
+
+    // Стили кнопок хедера
+    .library-button {
+        width: 148px;
+        
+        // Правый маржин у первой кнопки
+        &:nth-child(1) {
+            margin-right: 16px;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+// Стили оболочки для карточек товара
+.films-wrapper {
+    width: $mobile;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Стили контейнера карточек фильмов
+.films-container {
+    width: 280px;
+    margin: 20px auto 40px auto;
+}
+
+// Стили шаблона
+.film-container {
+    width: 280px;
+    height: 443px;
+    margin: 0 auto 20px auto;
+
+}
+
+// Стили оболочки афиши
+.image-wrapper {
+    width: 280px;
+    height: 402px;       
+    border-radius: 5px;
+
+    background-color: $color-text-footer;
+}
+
+// Cтили картинки афиши
+.film-image {
+    width: 280px;
+    height: 402px;
+    border-radius: 5px;
+}
+
+// Стили названия фильма
+.film-title {
+    margin: 10px 0 0 0;
+
+    font-size: 12px;
+    line-height: 16px;
+}
+
+// Стили жанра и года выпуска
+.film-data {
+    line-height: 16px;
+    color: $color-card-accent;
+}
+
+// Для экранов от 768 до 1279 пикселей
+@media screen and (min-width: $tablet) {
+    // Стили оболочки для карточек товара
+    .films-wrapper {
+        width: $tablet;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // Стили контейнера карточек фильмов
+    .films-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+
+        width: 704px;
+        margin: 60px auto 60px auto;
+    }
+
+    // Стили шаблона
+    .film-container {
+        width: 336px;
+        height: 494px;
+        margin: 0 auto 0 auto;
+    }
+
+    // Стили оболочки афиши
+    .image-wrapper {
+        width: 336px;
+        height: 455px;
+    }
+
+    // Cтили картинки афиши
+    .film-image {
+        width: 336px;
+        height: 455px;
+    }
+}
+
+// Для экранов от 1280 и более пикселей
+@media screen and (min-width: $desktop) {
+    // Стили оболочки для карточек товара
+    .films-wrapper {
+        width: $desktop;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    // Стили контейнера карточек фильмов
+    .films-container {
+        row-gap: 32px;
+        column-gap: 16px;
+    
+        width: 1217px;
+    }
+    
+    // Стили шаблона
+    .film-container {
+        width: 395px;
+        height: 634px;
+    }
+    
+    // Стили оболочки афиши
+    .image-wrapper {
+        width: 395px;
+        height: 574px;
+    }
+    
+    // Cтили картинки афиши
+    .film-image {
+        width: 395px;
+        height: 574px;
+    }
+}

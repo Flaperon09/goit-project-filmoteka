@@ -1,0 +1,42 @@
+<div class="container-header">
+  <!-- Блок навигации -->
+  <nav class="header-navigation">
+    <div class="header-subject">
+      <a class="menu-link" href="./index.html">
+        <svg class="header-icon">
+          <use href="./images/symbol-defs.svg#icon-film"></use>
+        </svg>
+      </a>
+      <a class="menu-link" href="./index.html">
+        <h1 class="header-title">Filmoteka</h1>
+      </a>
+    </div>
+    <ul class="menu-section">
+      <li class="menu-element">
+        <a class="menu-link current" href="./index.html">HOME</a>
+      </li>
+      <li class="menu-element">
+        <a class="menu-link" href="./library.html">MY LIBRARY</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Форма поиска -->
+  <form
+    class="search-form js-search-form"
+    name="search_form"
+    autocomplete="on"
+    novalidate
+  >
+    <label class="search-label" for="search_word">Movie search</label>
+    <input class="search-input" type="text" name="movie" id="search_word" />
+    <button class="search-button" type="submit">
+      <svg class="search-icon">
+        <use href="./images/symbol-defs.svg#icon-search"></use>
+      </svg>
+    </button>
+  </form>
+  <!-- Соообщение об ошибке -->
+  <p class="search-message js-search-message">
+    Search result not successful. Enter the correct movie name and try again
+  </p>
+</div>

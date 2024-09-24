@@ -1,0 +1,66 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    // Основной цвет фона
+    background-color: $bkg-color;
+    // Основной цвет текста
+    color: $color-text;
+    // Параметры шрифта
+    font-family: $font-main, $font-family;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: normal;
+    // Сброс отступов
+    margin: 0;
+}
+
+// Общая стилизация заголовков
+h1,
+h2,
+h3 {
+    color: $color-title;
+    background-color: transparent;
+    margin: 0;
+}
+
+// Стили картинок
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+// Стили абзацев
+p {
+    margin: 0;
+    padding: 0;
+}
+
+// Стили контейнера
+// .container {
+//     width: 320px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding-left: 15px;
+//     padding-right: 15px;
+// }
+
+// Стиль для сброса настроек
+.list,
+li>p {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}
+

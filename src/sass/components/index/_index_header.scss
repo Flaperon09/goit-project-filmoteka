@@ -1,0 +1,281 @@
+// Стили контейнера хедера
+.container-header {
+    width: $mobile;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+
+    background-color: $bkg-color;
+    background-image: url('../images/background-mobile.jpg');
+}
+
+// Медиазапрос для бекграунда
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .container-header {
+        background-size: $mobile;
+        background-image: url('../images/background-mobile@2x.jpg');
+    }
+}
+
+// Стили блока навигации
+.header-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+    height: 24px;
+    margin: 0 auto 0 auto;
+}
+
+// Стили заголовка хедера
+.header-subject {
+    display: flex;
+}
+
+// Стили иконки заголовка хедера
+.header-icon {
+    width: 24px;
+    height: 24px;
+}
+
+// Стили названия сайта
+.header-title {
+    display: none;
+}
+
+// === Стили списка меню
+.menu-section {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+// - Стили пунктов меню
+.menu-element {
+    position: relative;
+    &:nth-child(2) {
+        margin-left: 40px;
+    }
+}
+
+// - Стили ссылок меню
+.menu-link {
+    line-height: 14.06px;
+    color: $color-text-header;
+    text-decoration: none;
+
+    // Стили линии подчёркивания пункта меню
+    &.current::after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: $color-underline;
+    }
+}
+
+// === Стили формы поиска
+.search-form {
+    position: relative;
+    width: 280px;
+    height: 20px;
+    margin: 54px auto 0 auto;
+}
+
+// - Стили лейбла формы поиска
+.search-label {
+    position: absolute;
+    top: 2px;
+    left: 0;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: $color-text-header;
+}
+
+// - Стили поля input
+.search-input {
+    width: 280px;
+    height: 20px;
+    padding-left: 90px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $color-line-input;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    font-style: italic;
+    color: $color-text-header;
+    background-color: transparent;
+    outline: none;
+}
+
+// - Стили скрытой кнопки поиска
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: inline-flex;
+    width: 40px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+// - Стили иконки кнопки искать
+.search-icon {
+    position: absolute;
+    top: 3px;
+    right: 0px;
+
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+
+// Стили сообщения предупреждения
+.search-message {
+    width: 280px;
+    height: 32px;
+    margin: 16px auto 0 auto;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: $color-text-massage;
+
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+    &.show-message {
+        opacity: 1;
+    }
+}
+
+// === Для экранов от 768 до 1279 пикселей
+@media screen and (min-width: $tablet) {
+    // Стили контейнера хедера
+    .container-header {
+        width: $tablet;
+        height: 216px;
+
+        background-image: url('../images/background-tablet.jpg');
+    }
+    
+    // Медиазапрос для бекграунда
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .container-header {
+            background-size: $tablet;
+            background-image: url('../images/background-tablet@2x.jpg');
+        }
+    }
+
+    // Стили блока навигации
+    .header-navigation {
+        width: 704px;
+        height: 35px;
+    }
+    
+    // Стили заголовка хедера
+    .header-subject {
+        display: flex;
+        align-items: center;
+    }
+    
+    // Стили иконки заголовка хедера
+    .header-icon {
+        margin-top: 3px;
+    }
+    
+    // Стили названия сайта
+    .header-title {
+        display: block;
+        margin-left: 8px;
+
+        font-size: 30px;
+        line-height: 35.16px;
+        color: $color-text-header;
+    }
+
+    // === Стили формы поиска
+    .search-form {
+        width: 336px;
+        margin: 40px auto 0 auto;
+    }
+
+    // - Стили поля input
+    .search-input {
+        width: 336px;
+    }
+
+    // Стили сообщения предупреждения
+    .search-message {
+        width: 455px;
+        height: 16px;
+        margin: 20px auto 0 auto;
+    
+        text-align: center;
+    }
+}
+
+// === Для экранов от 1280 и более пикселей
+@media screen and (min-width: $desktop) {
+    // Стили контейнера хедера
+    .container-header {
+        width: $desktop;
+    
+        background-image: url('../images/background-desktop.jpg');
+    }
+    
+    // Медиазапрос для бекграунда
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .container-header {
+            background-size: $desktop;
+            background-image: url('../images/background-desktop@2x.jpg');
+        }
+    }
+
+    // Стили блока навигации
+    .header-navigation {
+        width: 1216px;
+    }
+    
+    // Стили названия сайта
+    .header-title {
+        margin-left: 10px;
+    }
+
+    // === Стили формы поиска
+    .search-form {
+        width: 394px;
+    }
+    
+    // - Стили поля input
+    .search-input {
+        width: 394px;
+     }
+}
