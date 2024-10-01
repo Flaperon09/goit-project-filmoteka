@@ -1,5 +1,7 @@
 import { clsModal, modalClickButtons } from "./modal";
 
+let cardMarkup = ''; // Инициализация переменной для хранения разметки
+
 const movieContainer = document.querySelector('.js-modal__movie'); // Контейнер карточки фильма
 
 // Функция запроса детальной информации о фильме
