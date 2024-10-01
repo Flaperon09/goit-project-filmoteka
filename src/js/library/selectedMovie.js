@@ -22,7 +22,6 @@ function loadWatchedFilms() {
 
     let watched = loadLocalStorage('watched');
     if (!watched) { watched = [] }; // Если данных нет - присвоить переменной пустой массив
-    console.log('Просмотренные фильмы: ', watched);
     listSelectedMovie(watched); // Вызываем функцию рендера выбранных фильмов
 };
 
@@ -33,7 +32,6 @@ function loadQueueFilms() {
 
     let queue = loadLocalStorage('queue');
     if (!queue) { queue = [] }; // Если данных нет - присвоить переменной пустой массив
-    console.log('Фильмы в очереди: ', queue);
     listSelectedMovie(queue); // Вызываем функцию рендера выбранных фильмов
 };
 

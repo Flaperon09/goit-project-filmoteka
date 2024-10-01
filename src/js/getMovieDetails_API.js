@@ -6,7 +6,6 @@ const movieContainer = document.querySelector('.js-modal__movie'); // Конте
 export function getMovieDetails(id) {
     fetchGetMovieDetails(id)
         .then(response => {
-            console.log('response: ', response);
             createFilmInfo(response); // Вызываем функцию формирования информации для модального окна
             movieContainer.innerHTML = cardMarkup; // Вставляем разметку карточки в разметку модалки
             clsModal(); // Вызываем функцию закрытия модального окна
@@ -75,7 +74,7 @@ function createFilmInfo({ title, vote_average, vote_count, popularity,
 
 // Функция получения жанров фильма
 export function listGenresMovie(genres) {
-    movieGenres = []; // Обнуление массива жанров текущего фильма
+    const movieGenres = []; // Обнуление массива жанров текущего фильма
     genres.map(({ name }) => {  // Перебераем массив существующих жанров  
         movieGenres.push(name); // -> добавить название существующего жанра в массив
     });

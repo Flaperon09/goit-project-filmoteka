@@ -21,8 +21,6 @@ export function modal() {
     idMovie = filmElement.getAttribute('data-modal-open');
     document.body.classList.add("modal-open");
     modalElement.classList.remove("is-hidden");
-
-    console.log('ID фильма:', idMovie); // Логируем ID фильма
     
     getMovieDetails(idMovie); // Вызов функции для получения деталей фильма    
   });
