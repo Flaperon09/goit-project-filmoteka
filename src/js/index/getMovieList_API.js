@@ -26,6 +26,7 @@ const listOfGenres = [
 let movieGenres = []; // Инициализация массива жанров для фильма
 export let cardsMarkup = ''; // Инициализация разметки карточки фильма
 let page = 1; // Стартовая страница рендера
+let totalPages = 1; // Инициализация общего количества страниц
 let hasBeenCalledElement = false; // Флаг однократного вызова пагинации при первом рендере
 
 let seconRender = 0; // Количество рендеров страниц в данной сессии
@@ -51,7 +52,7 @@ export function fetchListMovie(page) {
             filmsContainer.innerHTML = cardsMarkup; // Вставляем разметку карточек в разметку контейнера
             modal(); // Вызываем функцию модального окна
             
-            const totalPages = totPgs(response.total_pages);  // Вызов функции определения общего количества страниц в ответе.
+            totalPages = totPgs(response.total_pages);  // Вызов функции определения общего количества страниц в ответе.
             if (!hasBeenCalledElement) {     // Если это первая загрузка страницы ->
                 element(totalPages, page);   // -> вызвать функцию рендера блока пагинации ->
                 hasBeenCalledElement = true; // -> поставить флаг, что первая загрузка произошла
