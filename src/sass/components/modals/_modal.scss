@@ -47,7 +47,7 @@ body.modal-open {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 // Стили постера в модальном окне
@@ -56,7 +56,9 @@ body.modal-open {
     height: 357px;
     margin: 0 auto 20px auto;
     border-radius: 5px;
-    background-color: aquamarine;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg');
+    background-size: cover;
+    background-position: 50%;
 }
 
 // Стили кнопки закрытия модельного окна
@@ -66,6 +68,7 @@ body.modal-open {
     right: 8px;
     width: 32px;
     height: 32px;
+    z-index: 12;
 
     display: inline-flex;
     margin: 0;
@@ -81,6 +84,7 @@ body.modal-open {
     right: 0px;
     width: 32px;
     height: 32px;
+    z-index: 15;
     
     cursor: pointer;
 }
@@ -104,6 +108,7 @@ body.modal-open {
     margin-bottom: 20px;
     line-height: 16px;
     & td:first-child {
+        width: 100px;
         color: $color-modal-colon;
     }
 }
@@ -156,11 +161,100 @@ body.modal-open {
     
     cursor: pointer;
     
-    &.checked {
+    &:hover {
         border: none;
         background-color: $color-button;
         color: $color-text-header;
     }
     
     line-height: 16px;
+}
+
+// === Для экранов от 768 до 1279 пикселей
+@media screen and (min-width: $tablet) {
+    // Стили контейнера модельного окна
+    .modal__movie {
+        display: flex;
+        width: 704px;
+        height: 552px;
+        padding: 40px 36px;
+    }
+
+    // Стили постера в модальном окне
+    .modal__image {
+        width: 264px;
+        height: 374px;
+        margin: 0 68px 0 0;
+    }
+
+    // === Стили блока информации о фильме
+    .modal__info {
+        width: 300px;
+        margin: 0;
+    }
+
+        // - Стили таблицы данных
+        .modal__table {
+            width: 300px;
+        }
+      
+    // - Стили контейнера кнопок хедера
+    .modal__buttons {
+        justify-content: left;
+        padding-bottom: 40px;
+    }
+    
+    // - Стили кнопок хедера
+    .modal__button {
+        width: 125px;
+    
+        // Правый маржин у первой кнопки
+        &:nth-child(1) {
+            margin-right: 15px;
+        }
+    }
+}
+
+// === Для экранов от 1280 и более пикселей
+@media screen and (min-width: $desktop) {
+    // Стили контейнера модельного окна
+    .modal__movie {
+        width: 806px;
+        height: 558px;
+        padding: 40px 12px;
+    }
+    
+    // Стили постера в модальном окне
+    .modal__image {
+        width: 375px;
+        height: 478px;
+        margin: 0 16px 0 0;
+    }
+    
+    // === Стили блока информации о фильме
+    .modal__info {
+        width: 390px;
+        margin: 0;
+    }
+    
+    // - Стили названия фильма
+    .modal__header {
+        font-size: 30px;
+        line-height: 35.16px;
+    }    
+
+    // - Стили таблицы данных
+    .modal__table {
+        width: 380px;
+    }
+
+    // - Стили контейнера кнопок хедера
+    .modal__buttons {
+        justify-content: center;
+    }
+    
+    // - Стили кнопок хедера
+    .modal__button {
+        width: 136;
+    }
 }

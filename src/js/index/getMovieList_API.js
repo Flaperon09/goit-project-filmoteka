@@ -1,5 +1,5 @@
-import { element } from "./pagination";
-import { modal } from "./modal";
+import { element } from "../pagination";
+import { modal } from "../modal";
 
 const listOfGenres = [
     { id: 28, name: 'Action' },
@@ -27,7 +27,6 @@ let movieGenres = []; // Инициализация массива жанров 
 export let cardsMarkup = ''; // Инициализация разметки карточки фильма
 let page = 1; // Стартовая страница рендера
 let hasBeenCalledElement = false; // Флаг однократного вызова пагинации при первом рендере
-let hasBeenCalledModal = false; // Флаг однократного вызова функции модального окна
 
 let seconRender = 0; // Количество рендеров страниц в данной сессии
 
@@ -50,11 +49,7 @@ export function fetchListMovie(page) {
             createFilmCards(response.results); // Вызываем функцию формирования карточек фильмов
             const filmsContainer = document.querySelector('.js-films-container'); // Нашли контейнер по классу
             filmsContainer.innerHTML = cardsMarkup; // Вставляем разметку карточек в разметку контейнера
-            // Условие однократного вызова функции модального окна (для избежания накопления слушателей)
-            // if (!hasBeenCalledModal) {
-                modal();
-            //     hasBeenCalledModal = true;
-            // };
+            modal(); // Вызываем функцию модального окна
             
             const totalPages = totPgs(response.total_pages);  // Вызов функции определения общего количества страниц в ответе.
             if (!hasBeenCalledElement) {     // Если это первая загрузка страницы ->
@@ -67,13 +62,21 @@ export function fetchListMovie(page) {
 
 // Функция формирования карточек фильмов
 export function createFilmCards(cards) {
-    console.log(cards);
     return cardsMarkup = cards.map(({ title, genre_ids, release_date, poster_path, id }) => {
         listGenres(genre_ids); // Вызываем функцию формирования массива жанров по их ID
+
+        let pathToImage = ``;
+        if (poster_path === null) {
+            pathToImage = 'images/image-placeholder.png';
+            // pathToImage = `https://img.freepik.com/premium-vector/transparent-background_738849-1468.jpg?w=500`;
+        } else {
+            pathToImage = `https://image.tmdb.org/t/p/w500${poster_path}`;
+        };
+
         return `
         <div class="film-container js-film-container" data-modal-open="${id}">
             <div class="image-wrapper">
-                <img class="film-image" src="https://image.tmdb.org/t/p/w500${poster_path}" />
+                <img class="film-image" src="${pathToImage}" />
             </div>
             <h2 class="film-title">${title.toUpperCase()}</h2>
             <p class="film-data">${[...movieGenres].join(', ')} | ${release_date.split('-')[0]}</p>

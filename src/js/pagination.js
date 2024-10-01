@@ -1,5 +1,5 @@
-import { fetchListMovie } from "./getMovieList_API";
-import { isSearch, fetchSearchPagination, searchQuery } from "./getSearchMovie_API";
+import { fetchListMovie } from "./index/getMovieList_API";
+import { isSearch, fetchSearchPagination, searchQuery } from "./index/getSearchMovie_API";
 
 const ulTag = document.querySelector('.js-pagination-list'); // Выбираем список кнопок пагинации.
 const paginationContainer = document.querySelector('.js-pagination-container'); // Выбираем список кнопок пагинации.
@@ -20,7 +20,12 @@ export function element(totalPages, page) {
     let afterPage = page + 2; // Конец диапазона кнопок пагинации.
 
     if (page > 1) {
-        liTag += `<li class="btn prev" onClick='element(${totalPages}, ${page - 1})'>L</li>`;
+        // liTag += `<li class="btn prev" onClick='element(${totalPages}, ${page - 1})'>L</li>`;
+        liTag += `<li class="btn prev" onClick='element(${totalPages}, ${page - 1})'>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.6666 8H3.33325" stroke="black" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.99992 12.6667L3.33325 8.00004L7.99992 3.33337" stroke="black" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></li>`;
     }; // Если номер страницы больше 1 - добавить кнопку ВЛЕВО.
 
     if (window.innerWidth > 767) {
@@ -85,7 +90,11 @@ export function element(totalPages, page) {
     }; // Если ширина вьюпорта более 767 пикселей
 
     if (page < totalPages) {
-        liTag += `<li class="btn next" onclick='element(${totalPages}, ${page + 1})'>R</li>`;
+        liTag += `<li class="btn next" onclick='element(${totalPages}, ${page + 1})'>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.33341 8H12.6667" stroke="black" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.00008 12.6667L12.6667 8.00004L8.00008 3.33337" stroke="black" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></li>`;
     }; // Если номер страницы меньше общего кол-ва страниц - добавить кнопку ВПРАВО.
 
     ulTag.innerHTML = liTag; // Добавляем теги в разметку пагинации.
@@ -93,8 +102,5 @@ export function element(totalPages, page) {
 
 // Добавление функции element в глобальную область видимости.
 window.element = element;
-
-// Вызов функции рендера блока пагинации
-// element(totalPages, page);
 
 // window.innerWidth - определение ширины вьюпорта в JS
